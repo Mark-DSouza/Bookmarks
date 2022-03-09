@@ -1,8 +1,19 @@
-<% @books.each do |book| %>
-  <h1><%= book.rank_this_week %></h1>
-  <h2><%= book.title %></h2>
-  <p><%= book.author %></p>
-  <p>(<%= book.publisher %>)</p>
-  <%= link_to "See all Editorial Reviews", book_path(book) %>
-  <p><%= book.weeks_on_list %> weeks on list</p>
+  <% @books.each do |book| %>
+  <div class="book">
+    <div class="row">
+      <div class="col-md-1">
+        <p class="rank-this-week"><%= book.rank_this_week %></p>
+      </div>
+      <div class="col-md-9">
+        <p class="title"><%= book.title %>  </p>
+        <p class="author">by <%= book.author %> </p>
+        <p class="publisher">(<%= book.publisher %>)</p>
+        <p class="description"><%= book.description %></p>
+        <%= link_to 'See all Editorial Reviews', book %>
+      </div>
+      <div class="col-md-2">
+        <p class="weeks-on-list"><%= book.weeks_on_list %>  weeks on list</p>
+      </div>
+    </div>
+  </div>
 <% end %>
