@@ -1,0 +1,10 @@
+<h1><%= @book.rank_this_week %></h1>
+<h2><%= @book.title %></h2>
+<p><%= @book.author %></p>
+<p>(<%= @book.publisher %>)</p>
+<p><%= @book.weeks_on_list %> weeks on list</p>
+
+<% @reviews.each do |review| %>
+  <h4><%= review.comment %></h4>
+  <h6><%= review.author %></h6>
+<% end %>

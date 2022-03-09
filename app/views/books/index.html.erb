@@ -1,0 +1,8 @@
+<% @books.each do |book| %>
+  <h1><%= book.rank_this_week %></h1>
+  <h2><%= book.title %></h2>
+  <p><%= book.author %></p>
+  <p>(<%= book.publisher %>)</p>
+  <%= link_to "See all Editorial Reviews", book_path(book) %>
+  <p><%= book.weeks_on_list %> weeks on list</p>
+<% end %>
